@@ -1,33 +1,12 @@
-import React, { memo, Suspense } from 'react'
+import React, { memo } from 'react';
 
-import Box from '../../components/Box'
-import Spinner from '../../components/Spinner'
-import logo from '../../logo.svg'
+import { Wrapper } from './styled';
 
-import Counter from './Counter'
-import DocList from './DocList'
-import styles from './index.module.css'
+const Index = memo(() => (
+    <Wrapper>
+        111
+    </Wrapper>
+  ));
+Index.displayName = 'Index';
 
-interface Props {}
-
-const Index: React.FC<Props> = memo(() => {
-  return (
-    <>
-      <Box>
-        <h1 className={styles.h1}>I'm REACT_APP_TE111XT from .env</h1>
-        <img src={logo} alt="react-logo" className="react-logo" />
-      </Box>
-      <Box>
-        <Counter />
-      </Box>
-      <Box>
-        <Suspense fallback={<Spinner size="xl" />}>
-          <DocList />
-        </Suspense>
-      </Box>
-    </>
-  )
-})
-Index.displayName = 'Index'
-
-export default Index
+export default Index;
